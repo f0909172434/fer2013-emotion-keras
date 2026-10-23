@@ -1,0 +1,17 @@
+{
+  "balanced_sampling": true,
+  "train_images_per_epoch": 42931,
+  "epochs_run": 27,
+  "steps_run": 9072,
+  "train_seconds": 4297.4,
+  "latent_dim": 128,
+  "batch_size": 128,
+  "optimizer": "Adam(2e-4, beta_1=0.5) for G and D",
+  "real_label_smoothing": 0.9,
+  "final": {
+    "d_fake_acc": 0.8350160717964172,
+    "d_loss": 1.2552224397659302,
+    "d_real_acc": 0.46411699056625366,
+    "g_loss": 1.0223383903503418
+  }
+}

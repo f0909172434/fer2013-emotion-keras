@@ -1,0 +1,57 @@
+Epoch 1/50
+191/191 - 50s - 263ms/step - accuracy: 0.2807 - loss: 1.7786 - val_accuracy: 0.1730 - val_loss: 1.9444 - learning_rate: 0.0010
+Epoch 2/50
+191/191 - 48s - 253ms/step - accuracy: 0.4326 - loss: 1.4665 - val_accuracy: 0.3323 - val_loss: 1.6994 - learning_rate: 0.0010
+Epoch 3/50
+191/191 - 56s - 291ms/step - accuracy: 0.4942 - loss: 1.3312 - val_accuracy: 0.4591 - val_loss: 1.4145 - learning_rate: 0.0010
+Epoch 4/50
+191/191 - 90s - 473ms/step - accuracy: 0.5169 - loss: 1.2624 - val_accuracy: 0.5221 - val_loss: 1.2965 - learning_rate: 0.0010
+Epoch 5/50
+191/191 - 94s - 494ms/step - accuracy: 0.5453 - loss: 1.2122 - val_accuracy: 0.5170 - val_loss: 1.2625 - learning_rate: 0.0010
+Epoch 6/50
+191/191 - 94s - 494ms/step - accuracy: 0.5624 - loss: 1.1661 - val_accuracy: 0.5571 - val_loss: 1.1896 - learning_rate: 0.0010
+Epoch 7/50
+191/191 - 98s - 513ms/step - accuracy: 0.5728 - loss: 1.1314 - val_accuracy: 0.5077 - val_loss: 1.2633 - learning_rate: 0.0010
+Epoch 8/50
+191/191 - 96s - 504ms/step - accuracy: 0.5912 - loss: 1.0897 - val_accuracy: 0.5511 - val_loss: 1.1884 - learning_rate: 0.0010
+Epoch 9/50
+191/191 - 96s - 503ms/step - accuracy: 0.6022 - loss: 1.0640 - val_accuracy: 0.5216 - val_loss: 1.3330 - learning_rate: 0.0010
+Epoch 10/50
+191/191 - 94s - 493ms/step - accuracy: 0.6072 - loss: 1.0389 - val_accuracy: 0.5536 - val_loss: 1.1676 - learning_rate: 0.0010
+Epoch 11/50
+191/191 - 92s - 480ms/step - accuracy: 0.6157 - loss: 1.0211 - val_accuracy: 0.5685 - val_loss: 1.1315 - learning_rate: 0.0010
+Epoch 12/50
+191/191 - 91s - 476ms/step - accuracy: 0.6279 - loss: 0.9972 - val_accuracy: 0.5504 - val_loss: 1.3117 - learning_rate: 0.0010
+Epoch 13/50
+191/191 - 98s - 512ms/step - accuracy: 0.6402 - loss: 0.9682 - val_accuracy: 0.6008 - val_loss: 1.0907 - learning_rate: 0.0010
+Epoch 14/50
+191/191 - 94s - 491ms/step - accuracy: 0.6457 - loss: 0.9489 - val_accuracy: 0.5985 - val_loss: 1.0540 - learning_rate: 0.0010
+Epoch 15/50
+191/191 - 88s - 462ms/step - accuracy: 0.6600 - loss: 0.9257 - val_accuracy: 0.5622 - val_loss: 1.2498 - learning_rate: 0.0010
+Epoch 16/50
+191/191 - 87s - 457ms/step - accuracy: 0.6661 - loss: 0.9006 - val_accuracy: 0.5985 - val_loss: 1.1330 - learning_rate: 0.0010
+Epoch 17/50
+191/191 - 88s - 462ms/step - accuracy: 0.6771 - loss: 0.8777 - val_accuracy: 0.5857 - val_loss: 1.1426 - learning_rate: 0.0010
+Epoch 18/50
+191/191 - 89s - 464ms/step - accuracy: 0.7016 - loss: 0.8100 - val_accuracy: 0.6117 - val_loss: 1.1220 - learning_rate: 5.0000e-04
+Epoch 19/50
+191/191 - 89s - 465ms/step - accuracy: 0.7133 - loss: 0.7792 - val_accuracy: 0.6210 - val_loss: 1.0366 - learning_rate: 5.0000e-04
+Epoch 20/50
+191/191 - 86s - 451ms/step - accuracy: 0.7198 - loss: 0.7628 - val_accuracy: 0.6233 - val_loss: 1.0189 - learning_rate: 5.0000e-04
+Epoch 21/50
+191/191 - 86s - 453ms/step - accuracy: 0.7279 - loss: 0.7336 - val_accuracy: 0.6275 - val_loss: 1.0505 - learning_rate: 5.0000e-04
+Epoch 22/50
+191/191 - 83s - 437ms/step - accuracy: 0.7372 - loss: 0.7210 - val_accuracy: 0.6317 - val_loss: 1.0472 - learning_rate: 5.0000e-04
+Epoch 23/50
+191/191 - 84s - 439ms/step - accuracy: 0.7411 - loss: 0.6995 - val_accuracy: 0.6345 - val_loss: 1.0357 - learning_rate: 5.0000e-04
+Epoch 24/50
+191/191 - 83s - 435ms/step - accuracy: 0.7587 - loss: 0.6510 - val_accuracy: 0.6442 - val_loss: 1.0465 - learning_rate: 2.5000e-04
+Epoch 25/50
+191/191 - 82s - 430ms/step - accuracy: 0.7678 - loss: 0.6309 - val_accuracy: 0.6291 - val_loss: 1.1860 - learning_rate: 2.5000e-04
+Epoch 26/50
+191/191 - 82s - 427ms/step - accuracy: 0.7758 - loss: 0.6108 - val_accuracy: 0.6391 - val_loss: 1.0876 - learning_rate: 2.5000e-04
+Epoch 27/50
+191/191 - 82s - 428ms/step - accuracy: 0.7886 - loss: 0.5860 - val_accuracy: 0.6526 - val_loss: 1.0805 - learning_rate: 1.2500e-04
+Epoch 28/50
+191/191 - 83s - 436ms/step - accuracy: 0.7889 - loss: 0.5715 - val_accuracy: 0.6414 - val_loss: 1.1059 - learning_rate: 1.2500e-04
+{"task": "task1_raw", "test_accuracy": 0.6404290888826971, "test_macro_f1": 0.6026850086289278, "best_epoch": 20}

@@ -1,0 +1,30 @@
+{
+  "v1": {
+    "angry": 0.1518,
+    "disgust": 0.1791,
+    "fear": 0.1549,
+    "happy": 0.1394,
+    "neutral": 0.1438,
+    "sad": 0.1477,
+    "surprise": 0.1542
+  },
+  "v2": {
+    "angry": 0.142,
+    "disgust": 0.1455,
+    "fear": 0.1408,
+    "happy": 0.1318,
+    "neutral": 0.136,
+    "sad": 0.1377,
+    "surprise": 0.1413
+  },
+  "real_val_reference": {
+    "angry": 0.1245,
+    "disgust": 0.0849,
+    "fear": 0.1172,
+    "happy": 0.1271,
+    "neutral": 0.1233,
+    "sad": 0.1264,
+    "surprise": 0.0912
+  },
+  "_note": "平均『到最近同類訓練圖』的像素差（0~1）。越小越像某張訓練圖。"
+}

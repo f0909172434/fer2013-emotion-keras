@@ -1,0 +1,114 @@
+{
+  "task": "task3_gan_classifier_v2",
+  "notes": "[task3_generator_v2.keras] 真實訓練集 + cGAN 生成圖，每類補到 6133 張；驗證/測試集只有真實影像。",
+  "train_counts": {
+    "angry": 6133,
+    "disgust": 6133,
+    "fear": 6133,
+    "happy": 6133,
+    "neutral": 6133,
+    "sad": 6133,
+    "surprise": 6133
+  },
+  "train_size": 42931,
+  "epochs_run": 25,
+  "best_epoch": 17,
+  "best_val_loss": 1.021733045578003,
+  "best_val_accuracy": 0.6265676021575928,
+  "test_accuracy": 0.6225968236277515,
+  "test_macro_f1": 0.5862534545559918,
+  "test_per_class_recall": {
+    "angry": 0.4708,
+    "disgust": 0.4685,
+    "fear": 0.2598,
+    "happy": 0.841,
+    "neutral": 0.5953,
+    "sad": 0.6455,
+    "surprise": 0.8051
+  },
+  "test_per_class_f1": {
+    "angry": 0.5328,
+    "disgust": 0.5253,
+    "fear": 0.3455,
+    "happy": 0.8477,
+    "neutral": 0.577,
+    "sad": 0.5217,
+    "surprise": 0.7538
+  },
+  "confusion_matrix": [
+    [
+      451,
+      13,
+      68,
+      46,
+      116,
+      231,
+      33
+    ],
+    [
+      23,
+      52,
+      3,
+      2,
+      2,
+      21,
+      8
+    ],
+    [
+      98,
+      4,
+      266,
+      29,
+      125,
+      367,
+      135
+    ],
+    [
+      25,
+      0,
+      19,
+      1492,
+      95,
+      91,
+      52
+    ],
+    [
+      50,
+      7,
+      44,
+      79,
+      734,
+      298,
+      21
+    ],
+    [
+      70,
+      8,
+      66,
+      57,
+      215,
+      805,
+      26
+    ],
+    [
+      18,
+      3,
+      50,
+      41,
+      24,
+      26,
+      669
+    ]
+  ],
+  "train_seconds": 2102.9,
+  "config": {
+    "seed": 42,
+    "batch_size": 128,
+    "max_epochs": 50,
+    "lr": 0.001,
+    "early_stop_patience": 8,
+    "keras": "3.15.1",
+    "backend": "torch",
+    "torch": "2.14.1"
+  }
+}

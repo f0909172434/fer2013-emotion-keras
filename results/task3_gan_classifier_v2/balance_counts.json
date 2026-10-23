@@ -1,0 +1,57 @@
+{
+  "target_per_class": 6133,
+  "before": {
+    "angry": 3396,
+    "disgust": 371,
+    "fear": 3482,
+    "happy": 6133,
+    "neutral": 4220,
+    "sad": 4106,
+    "surprise": 2695
+  },
+  "synthetic_added": {
+    "angry": 2737,
+    "disgust": 5762,
+    "fear": 2651,
+    "happy": 0,
+    "neutral": 1913,
+    "sad": 2027,
+    "surprise": 3438
+  },
+  "after": {
+    "angry": 6133,
+    "disgust": 6133,
+    "fear": 6133,
+    "happy": 6133,
+    "neutral": 6133,
+    "sad": 6133,
+    "surprise": 6133
+  },
+  "baseline_agrees_with_gan_label": {
+    "angry": 0.2737,
+    "disgust": 0.2827,
+    "fear": 0.1075,
+    "neutral": 0.3481,
+    "sad": 0.4396,
+    "surprise": 0.4872,
+    "_note": "任務1分類器把該類生成圖判為同一類的比例（真實測試集上的對應數字見 task1 recall）"
+  },
+  "pixel_diversity_synthetic": {
+    "angry": 0.2887,
+    "disgust": 0.2624,
+    "fear": 0.2801,
+    "neutral": 0.278,
+    "sad": 0.2877,
+    "surprise": 0.2674
+  },
+  "pixel_diversity_real_train": {
+    "angry": 0.2893,
+    "disgust": 0.2689,
+    "fear": 0.2795,
+    "happy": 0.273,
+    "neutral": 0.2743,
+    "sad": 0.2853,
+    "surprise": 0.2719
+  },
+  "generator": "task3_generator_v2.keras"
+}

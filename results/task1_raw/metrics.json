@@ -1,0 +1,114 @@
+{
+  "task": "task1_raw",
+  "notes": "原始影像，只縮放到 [0,1]；無增強、無平衡。",
+  "train_counts": {
+    "angry": 3396,
+    "disgust": 371,
+    "fear": 3482,
+    "happy": 6133,
+    "neutral": 4220,
+    "sad": 4106,
+    "surprise": 2695
+  },
+  "train_size": 24403,
+  "epochs_run": 28,
+  "best_epoch": 20,
+  "best_val_loss": 1.018860101699829,
+  "best_val_accuracy": 0.6233162879943848,
+  "test_accuracy": 0.6404290888826971,
+  "test_macro_f1": 0.6026850086289278,
+  "test_per_class_recall": {
+    "angry": 0.5814,
+    "disgust": 0.5495,
+    "fear": 0.2275,
+    "happy": 0.836,
+    "neutral": 0.6058,
+    "sad": 0.6311,
+    "surprise": 0.8773
+  },
+  "test_per_class_f1": {
+    "angry": 0.5811,
+    "disgust": 0.5622,
+    "fear": 0.3296,
+    "happy": 0.8472,
+    "neutral": 0.6022,
+    "sad": 0.5458,
+    "surprise": 0.7508
+  },
+  "confusion_matrix": [
+    [
+      557,
+      21,
+      40,
+      35,
+      90,
+      169,
+      46
+    ],
+    [
+      25,
+      61,
+      5,
+      2,
+      2,
+      12,
+      4
+    ],
+    [
+      126,
+      11,
+      233,
+      30,
+      100,
+      322,
+      202
+    ],
+    [
+      45,
+      4,
+      19,
+      1483,
+      85,
+      68,
+      70
+    ],
+    [
+      85,
+      3,
+      19,
+      91,
+      747,
+      257,
+      31
+    ],
+    [
+      106,
+      5,
+      54,
+      57,
+      209,
+      787,
+      29
+    ],
+    [
+      15,
+      1,
+      20,
+      29,
+      15,
+      22,
+      729
+    ]
+  ],
+  "train_seconds": 2385.4,
+  "config": {
+    "seed": 42,
+    "batch_size": 128,
+    "max_epochs": 50,
+    "lr": 0.001,
+    "early_stop_patience": 8,
+    "keras": "3.15.1",
+    "backend": "torch",
+    "torch": "2.14.1"
+  }
+}

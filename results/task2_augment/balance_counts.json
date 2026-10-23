@@ -1,0 +1,21 @@
+{
+  "target_per_class": 6133,
+  "before": {
+    "angry": 3396,
+    "disgust": 371,
+    "fear": 3482,
+    "happy": 6133,
+    "neutral": 4220,
+    "sad": 4106,
+    "surprise": 2695
+  },
+  "after": {
+    "angry": 6133,
+    "disgust": 6133,
+    "fear": 6133,
+    "happy": 6133,
+    "neutral": 6133,
+    "sad": 6133,
+    "surprise": 6133
+  }
+}

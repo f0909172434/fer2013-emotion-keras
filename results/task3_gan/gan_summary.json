@@ -1,0 +1,14 @@
+{
+  "epochs_run": 45,
+  "train_seconds": 4237.1,
+  "latent_dim": 128,
+  "batch_size": 128,
+  "optimizer": "Adam(2e-4, beta_1=0.5) for G and D",
+  "real_label_smoothing": 0.9,
+  "final": {
+    "d_fake_acc": 0.7928556203842163,
+    "d_loss": 1.203323245048523,
+    "d_real_acc": 0.566337525844574,
+    "g_loss": 1.2146327495574951
+  }
+}

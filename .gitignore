@@ -1,0 +1,18 @@
+# 資料集（版權屬原作者，請從 Kaggle 下載）與快取
+data/
+*.zip
+*.npz
+# 模型權重（可由腳本重新產生）
+models/
+*.keras
+*.h5
+# 含 FER2013 真實人臉的圖，不重新散布
+results/task2_augment/augmented_examples.png
+# 環境
+.venv/
+__pycache__/
+.DS_Store
+.ipynb_checkpoints/
+# 憑證
+kaggle.json
+.env
