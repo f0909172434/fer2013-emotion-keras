@@ -1,0 +1,17 @@
+{
+  "generator": "task3_generator_v2.keras",
+  "gan_train_counts": {
+    "angry": 6133,
+    "disgust": 6133,
+    "fear": 6133,
+    "happy": 6133,
+    "neutral": 6133,
+    "sad": 6133,
+    "surprise": 6133
+  },
+  "epochs_run": 5,
+  "best_val_accuracy": 0.39990711212158203,
+  "cas_test_accuracy": 0.35775982167734743,
+  "cas_test_macro_f1": 0.3047947814561992,
+  "_note": "CAS：只用 GAN 圖訓練的分類器在真實測試集上的表現。對照：任務 1（真圖）macro-F1 0.603。"
+}

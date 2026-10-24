@@ -32,10 +32,17 @@ def nearest_distance(queries, refs, chunk=50):
 
 
 if __name__ == "__main__":
+    import argparse
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--generators", nargs="+",
+                        default=["v1=task3_generator.keras", "v2=task3_generator_v2.keras"])
+    args = parser.parse_args()
     (xtr, ytr), (xva, yva), _ = load_data()
     rng = np.random.default_rng(0)
-    result = {}
-    for version, path in (("v1", "task3_generator.keras"), ("v2", "task3_generator_v2.keras")):
+    out_path = RESULTS / "task3_gan_memorization.json"
+    result = json.loads(out_path.read_text()) if out_path.exists() else {}
+    for version, path in (spec.split("=") for spec in args.generators):
         gen = keras.saving.load_model(MODELS / path)
         result[version] = {}
         for c, name in enumerate(CLASSES):
@@ -48,5 +55,5 @@ if __name__ == "__main__":
         val = val[rng.choice(len(val), size=min(N, len(val)), replace=False)]
         result["real_val_reference"][name] = round(float(nearest_distance(val, xtr[ytr == c]).mean()), 4)
     result["_note"] = "平均『到最近同類訓練圖』的像素差（0~1）。越小越像某張訓練圖。"
-    (RESULTS / "task3_gan_memorization.json").write_text(json.dumps(result, ensure_ascii=False, indent=2))
+    out_path.write_text(json.dumps(result, ensure_ascii=False, indent=2))
     print(json.dumps(result, ensure_ascii=False, indent=2))

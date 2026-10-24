@@ -81,13 +81,22 @@ def save_examples(xtr, ytr, x_bal, y_bal, path):
 
 
 if __name__ == "__main__":
+    import argparse
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--seed", type=int, default=SEED,
+                        help="訓練用種子（增強資料固定用 SEED 產生，只改變模型初始化與訓練順序），用來估計種子造成的波動")
+    args = parser.parse_args()
+    task = "task2_augment" if args.seed == SEED else f"task2_augment_seed{args.seed}"
+
     (xtr, ytr), (xva, yva), (xte, yte) = load_data()
     x_bal, y_bal, target = balance_with_augmentation(xtr, ytr)
-    out = RESULTS / "task2_augment"
+    out = RESULTS / task
     out.mkdir(parents=True, exist_ok=True)
     (out / "balance_counts.json").write_text(json.dumps({
         "target_per_class": target, "before": class_counts(ytr), "after": class_counts(y_bal),
     }, ensure_ascii=False, indent=2))
-    save_examples(xtr, ytr, x_bal, y_bal, out / "augmented_examples.png")
-    train_and_evaluate("task2_augment", x_bal, y_bal, xva, yva, xte, yte,
-                       notes=f"影像增強離線過採樣，每類補到 {target} 張；驗證/測試集不動。")
+    if args.seed == SEED:
+        save_examples(xtr, ytr, x_bal, y_bal, out / "augmented_examples.png")
+    train_and_evaluate(task, x_bal, y_bal, xva, yva, xte, yte, seed=args.seed,
+                       notes=f"影像增強離線過採樣，每類補到 {target} 張；驗證/測試集不動。訓練種子 {args.seed}。")

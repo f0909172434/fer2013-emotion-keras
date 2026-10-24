@@ -1,0 +1,114 @@
+{
+  "task": "task3f_v2_pretrain_finetune",
+  "notes": "先用 task3_generator_v2.keras 生成的均衡資料預訓練，再以任務 2 的資料與設定微調。",
+  "train_counts": {
+    "angry": 6133,
+    "disgust": 6133,
+    "fear": 6133,
+    "happy": 6133,
+    "neutral": 6133,
+    "sad": 6133,
+    "surprise": 6133
+  },
+  "train_size": 42931,
+  "epochs_run": 28,
+  "best_epoch": 20,
+  "best_val_loss": 1.0272610187530518,
+  "best_val_accuracy": 0.6472364068031311,
+  "test_accuracy": 0.6455837280579548,
+  "test_macro_f1": 0.6255649757911189,
+  "test_per_class_recall": {
+    "angry": 0.643,
+    "disgust": 0.6937,
+    "fear": 0.3291,
+    "happy": 0.8303,
+    "neutral": 0.6277,
+    "sad": 0.5357,
+    "surprise": 0.8291
+  },
+  "test_per_class_f1": {
+    "angry": 0.5547,
+    "disgust": 0.6286,
+    "fear": 0.4266,
+    "happy": 0.8466,
+    "neutral": 0.6107,
+    "sad": 0.5254,
+    "surprise": 0.7865
+  },
+  "confusion_matrix": [
+    [
+      616,
+      32,
+      47,
+      35,
+      72,
+      129,
+      27
+    ],
+    [
+      20,
+      77,
+      3,
+      2,
+      4,
+      5,
+      0
+    ],
+    [
+      189,
+      11,
+      337,
+      29,
+      104,
+      234,
+      120
+    ],
+    [
+      54,
+      5,
+      18,
+      1473,
+      121,
+      59,
+      44
+    ],
+    [
+      149,
+      1,
+      32,
+      65,
+      774,
+      191,
+      21
+    ],
+    [
+      203,
+      7,
+      77,
+      63,
+      209,
+      668,
+      20
+    ],
+    [
+      32,
+      1,
+      42,
+      39,
+      18,
+      10,
+      689
+    ]
+  ],
+  "train_seconds": 3177.1,
+  "config": {
+    "seed": 42,
+    "batch_size": 128,
+    "max_epochs": 50,
+    "lr": 0.001,
+    "early_stop_patience": 8,
+    "keras": "3.15.1",
+    "backend": "torch",
+    "torch": "2.14.1"
+  }
+}

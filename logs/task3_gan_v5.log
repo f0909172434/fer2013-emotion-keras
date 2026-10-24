@@ -1,0 +1,75 @@
+Epoch 1/200
+336/336 - 163s - 485ms/step - aux_fake_acc: 0.2743 - aux_real_acc: 0.2129 - d_fake_acc: 0.6502 - d_loss: 3.5709 - d_real_acc: 0.6339 - g_loss: 2.2543
+Epoch 2/200
+336/336 - 158s - 470ms/step - aux_fake_acc: 0.6719 - aux_real_acc: 0.2558 - d_fake_acc: 0.6663 - d_loss: 3.2702 - d_real_acc: 0.7104 - g_loss: 1.7197
+Epoch 3/200
+336/336 - 156s - 463ms/step - aux_fake_acc: 0.7514 - aux_real_acc: 0.2645 - d_fake_acc: 0.6697 - d_loss: 3.2470 - d_real_acc: 0.7012 - g_loss: 1.5486
+Epoch 4/200
+336/336 - 155s - 462ms/step - aux_fake_acc: 0.7954 - aux_real_acc: 0.2858 - d_fake_acc: 0.6491 - d_loss: 3.2825 - d_real_acc: 0.7030 - g_loss: 1.3473
+Epoch 5/200
+336/336 - 156s - 465ms/step - aux_fake_acc: 0.8297 - aux_real_acc: 0.2916 - d_fake_acc: 0.6198 - d_loss: 3.3113 - d_real_acc: 0.7232 - g_loss: 1.2317
+Epoch 6/200
+336/336 - 155s - 461ms/step - aux_fake_acc: 0.8320 - aux_real_acc: 0.2885 - d_fake_acc: 0.5976 - d_loss: 3.3459 - d_real_acc: 0.7324 - g_loss: 1.1849
+Epoch 7/200
+336/336 - 156s - 464ms/step - aux_fake_acc: 0.8488 - aux_real_acc: 0.3057 - d_fake_acc: 0.6087 - d_loss: 3.3224 - d_real_acc: 0.7104 - g_loss: 1.1047
+Epoch 8/200
+336/336 - 156s - 463ms/step - aux_fake_acc: 0.8687 - aux_real_acc: 0.3208 - d_fake_acc: 0.6050 - d_loss: 3.3078 - d_real_acc: 0.7010 - g_loss: 1.0041
+Epoch 9/200
+336/336 - 155s - 462ms/step - aux_fake_acc: 0.8701 - aux_real_acc: 0.3381 - d_fake_acc: 0.6139 - d_loss: 3.2834 - d_real_acc: 0.6879 - g_loss: 0.9251
+Epoch 10/200
+336/336 - 155s - 462ms/step - aux_fake_acc: 0.8841 - aux_real_acc: 0.3417 - d_fake_acc: 0.5998 - d_loss: 3.3043 - d_real_acc: 0.6813 - g_loss: 0.8904
+Epoch 11/200
+336/336 - 155s - 461ms/step - aux_fake_acc: 0.8825 - aux_real_acc: 0.3495 - d_fake_acc: 0.5946 - d_loss: 3.3083 - d_real_acc: 0.6731 - g_loss: 0.8971
+Epoch 12/200
+336/336 - 155s - 461ms/step - aux_fake_acc: 0.8780 - aux_real_acc: 0.3499 - d_fake_acc: 0.5943 - d_loss: 3.3244 - d_real_acc: 0.6634 - g_loss: 0.8709
+Epoch 13/200
+336/336 - 151s - 449ms/step - aux_fake_acc: 0.8784 - aux_real_acc: 0.3506 - d_fake_acc: 0.5764 - d_loss: 3.3444 - d_real_acc: 0.6624 - g_loss: 0.8189
+Epoch 14/200
+336/336 - 145s - 430ms/step - aux_fake_acc: 0.8769 - aux_real_acc: 0.3528 - d_fake_acc: 0.5620 - d_loss: 3.3636 - d_real_acc: 0.6703 - g_loss: 0.8001
+Epoch 15/200
+336/336 - 146s - 435ms/step - aux_fake_acc: 0.8909 - aux_real_acc: 0.3504 - d_fake_acc: 0.5611 - d_loss: 3.3772 - d_real_acc: 0.6594 - g_loss: 0.7698
+Epoch 16/200
+336/336 - 145s - 433ms/step - aux_fake_acc: 0.9019 - aux_real_acc: 0.3442 - d_fake_acc: 0.5435 - d_loss: 3.3944 - d_real_acc: 0.6704 - g_loss: 0.7548
+Epoch 17/200
+336/336 - 144s - 429ms/step - aux_fake_acc: 0.9057 - aux_real_acc: 0.3456 - d_fake_acc: 0.5335 - d_loss: 3.4145 - d_real_acc: 0.6731 - g_loss: 0.7212
+Epoch 18/200
+336/336 - 144s - 428ms/step - aux_fake_acc: 0.9056 - aux_real_acc: 0.3467 - d_fake_acc: 0.5338 - d_loss: 3.4204 - d_real_acc: 0.6668 - g_loss: 0.7198
+Epoch 19/200
+336/336 - 144s - 428ms/step - aux_fake_acc: 0.9084 - aux_real_acc: 0.3431 - d_fake_acc: 0.5280 - d_loss: 3.4361 - d_real_acc: 0.6619 - g_loss: 0.6956
+Epoch 20/200
+336/336 - 144s - 429ms/step - aux_fake_acc: 0.9117 - aux_real_acc: 0.3420 - d_fake_acc: 0.5352 - d_loss: 3.4436 - d_real_acc: 0.6564 - g_loss: 0.7010
+Epoch 21/200
+336/336 - 144s - 428ms/step - aux_fake_acc: 0.9023 - aux_real_acc: 0.3374 - d_fake_acc: 0.5170 - d_loss: 3.4614 - d_real_acc: 0.6559 - g_loss: 0.6977
+Epoch 22/200
+336/336 - 144s - 428ms/step - aux_fake_acc: 0.9104 - aux_real_acc: 0.3383 - d_fake_acc: 0.5134 - d_loss: 3.4678 - d_real_acc: 0.6642 - g_loss: 0.6914
+Epoch 23/200
+336/336 - 144s - 429ms/step - aux_fake_acc: 0.9072 - aux_real_acc: 0.3377 - d_fake_acc: 0.5163 - d_loss: 3.4635 - d_real_acc: 0.6566 - g_loss: 0.6759
+Epoch 24/200
+336/336 - 144s - 429ms/step - aux_fake_acc: 0.9040 - aux_real_acc: 0.3401 - d_fake_acc: 0.5060 - d_loss: 3.4689 - d_real_acc: 0.6634 - g_loss: 0.6652
+Epoch 25/200
+336/336 - 144s - 429ms/step - aux_fake_acc: 0.9105 - aux_real_acc: 0.3375 - d_fake_acc: 0.5206 - d_loss: 3.4654 - d_real_acc: 0.6522 - g_loss: 0.6717
+Epoch 26/200
+336/336 - 144s - 427ms/step - aux_fake_acc: 0.9135 - aux_real_acc: 0.3415 - d_fake_acc: 0.5089 - d_loss: 3.4728 - d_real_acc: 0.6605 - g_loss: 0.6442
+Epoch 27/200
+336/336 - 144s - 429ms/step - aux_fake_acc: 0.9233 - aux_real_acc: 0.3377 - d_fake_acc: 0.5061 - d_loss: 3.4876 - d_real_acc: 0.6603 - g_loss: 0.6222
+Epoch 28/200
+336/336 - 146s - 435ms/step - aux_fake_acc: 0.9161 - aux_real_acc: 0.3408 - d_fake_acc: 0.5061 - d_loss: 3.4750 - d_real_acc: 0.6561 - g_loss: 0.6115
+Epoch 29/200
+336/336 - 147s - 436ms/step - aux_fake_acc: 0.9150 - aux_real_acc: 0.3427 - d_fake_acc: 0.5148 - d_loss: 3.4842 - d_real_acc: 0.6472 - g_loss: 0.6359
+Epoch 30/200
+336/336 - 146s - 436ms/step - aux_fake_acc: 0.9222 - aux_real_acc: 0.3418 - d_fake_acc: 0.5146 - d_loss: 3.4852 - d_real_acc: 0.6457 - g_loss: 0.6143
+Epoch 31/200
+336/336 - 144s - 428ms/step - aux_fake_acc: 0.9145 - aux_real_acc: 0.3430 - d_fake_acc: 0.5048 - d_loss: 3.4838 - d_real_acc: 0.6562 - g_loss: 0.6012
+Epoch 32/200
+336/336 - 144s - 428ms/step - aux_fake_acc: 0.9233 - aux_real_acc: 0.3422 - d_fake_acc: 0.5112 - d_loss: 3.4898 - d_real_acc: 0.6458 - g_loss: 0.6110
+Epoch 33/200
+336/336 - 144s - 427ms/step - aux_fake_acc: 0.9286 - aux_real_acc: 0.3422 - d_fake_acc: 0.5026 - d_loss: 3.4882 - d_real_acc: 0.6543 - g_loss: 0.5956
+Epoch 34/200
+336/336 - 144s - 427ms/step - aux_fake_acc: 0.9205 - aux_real_acc: 0.3400 - d_fake_acc: 0.5130 - d_loss: 3.5022 - d_real_acc: 0.6373 - g_loss: 0.6016
+Epoch 35/200
+336/336 - 144s - 428ms/step - aux_fake_acc: 0.9243 - aux_real_acc: 0.3446 - d_fake_acc: 0.5159 - d_loss: 3.4975 - d_real_acc: 0.6323 - g_loss: 0.6024
+Epoch 36/200
+336/336 - 144s - 427ms/step - aux_fake_acc: 0.9171 - aux_real_acc: 0.3440 - d_fake_acc: 0.5266 - d_loss: 3.5029 - d_real_acc: 0.6267 - g_loss: 0.6286
+Epoch 37/200
+time limit reached after epoch 37
+336/336 - 154s - 458ms/step - aux_fake_acc: 0.9297 - aux_real_acc: 0.3403 - d_fake_acc: 0.5091 - d_loss: 3.5013 - d_real_acc: 0.6416 - g_loss: 0.5858

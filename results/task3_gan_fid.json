@@ -1,0 +1,53 @@
+{
+  "real_val_reference": {
+    "angry": 6.81,
+    "disgust": 9.62,
+    "fear": 2.82,
+    "happy": 3.0,
+    "neutral": 3.34,
+    "sad": 3.33,
+    "surprise": 3.24,
+    "_mean": 4.59
+  },
+  "v1": {
+    "angry": 43.39,
+    "disgust": 120.69,
+    "fear": 29.57,
+    "happy": 75.18,
+    "neutral": 27.93,
+    "sad": 15.23,
+    "surprise": 118.06,
+    "_mean": 61.44
+  },
+  "v2": {
+    "angry": 38.69,
+    "disgust": 28.69,
+    "fear": 28.09,
+    "happy": 82.49,
+    "neutral": 22.96,
+    "sad": 17.05,
+    "surprise": 113.36,
+    "_mean": 47.33
+  },
+  "_note": "FER-FID：任務1 CNN 的 256 維特徵上的 Fréchet distance，生成圖 2000 張 vs 同類別真實訓練圖；越小越好。real_val_reference 為真實驗證圖 vs 真實訓練圖的參考值（驗證圖張數較少，數值偏高）。",
+  "v3": {
+    "angry": 55.13,
+    "disgust": 64.85,
+    "fear": 38.77,
+    "happy": 115.36,
+    "neutral": 42.26,
+    "sad": 23.0,
+    "surprise": 175.37,
+    "_mean": 73.53
+  },
+  "v5": {
+    "angry": 63.0,
+    "disgust": 33.45,
+    "fear": 35.52,
+    "happy": 117.87,
+    "neutral": 40.79,
+    "sad": 7.47,
+    "surprise": 28.49,
+    "_mean": 46.66
+  }
+}

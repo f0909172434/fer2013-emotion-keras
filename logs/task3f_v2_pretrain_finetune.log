@@ -1,0 +1,68 @@
+Epoch 1/20
+336/336 - 120s - 356ms/step - accuracy: 0.2996 - loss: 1.7643 - val_accuracy: 0.1159 - val_loss: 2.0081
+Epoch 2/20
+336/336 - 118s - 350ms/step - accuracy: 0.5011 - loss: 1.3133 - val_accuracy: 0.3521 - val_loss: 1.8674
+Epoch 3/20
+336/336 - 119s - 355ms/step - accuracy: 0.5843 - loss: 1.0995 - val_accuracy: 0.3936 - val_loss: 2.1236
+Epoch 4/20
+336/336 - 114s - 339ms/step - accuracy: 0.6431 - loss: 0.9562 - val_accuracy: 0.3999 - val_loss: 1.9809
+Epoch 5/20
+336/336 - 114s - 339ms/step - accuracy: 0.6845 - loss: 0.8572 - val_accuracy: 0.3651 - val_loss: 2.3564
+{"generator": "task3_generator_v2.keras", "gan_train_counts": {"angry": 6133, "disgust": 6133, "fear": 6133, "happy": 6133, "neutral": 6133, "sad": 6133, "surprise": 6133}, "epochs_run": 5, "best_val_accuracy": 0.39990711212158203, "cas_test_accuracy": 0.35775982167734743, "cas_test_macro_f1": 0.3047947814561992, "_note": "CAS：只用 GAN 圖訓練的分類器在真實測試集上的表現。對照：任務 1（真圖）macro-F1 0.603。"}
+Epoch 1/50
+336/336 - 116s - 345ms/step - accuracy: 0.4568 - loss: 1.4229 - val_accuracy: 0.2675 - val_loss: 2.1276 - learning_rate: 0.0010
+Epoch 2/50
+336/336 - 115s - 343ms/step - accuracy: 0.5238 - loss: 1.2604 - val_accuracy: 0.5374 - val_loss: 1.1865 - learning_rate: 0.0010
+Epoch 3/50
+336/336 - 117s - 349ms/step - accuracy: 0.5550 - loss: 1.1832 - val_accuracy: 0.5253 - val_loss: 1.3124 - learning_rate: 0.0010
+Epoch 4/50
+336/336 - 116s - 345ms/step - accuracy: 0.5831 - loss: 1.1155 - val_accuracy: 0.5571 - val_loss: 1.1381 - learning_rate: 0.0010
+Epoch 5/50
+336/336 - 116s - 344ms/step - accuracy: 0.6029 - loss: 1.0570 - val_accuracy: 0.5625 - val_loss: 1.1559 - learning_rate: 0.0010
+Epoch 6/50
+336/336 - 119s - 353ms/step - accuracy: 0.6214 - loss: 1.0140 - val_accuracy: 0.5135 - val_loss: 1.3211 - learning_rate: 0.0010
+Epoch 7/50
+336/336 - 117s - 349ms/step - accuracy: 0.6363 - loss: 0.9721 - val_accuracy: 0.5934 - val_loss: 1.0956 - learning_rate: 0.0010
+Epoch 8/50
+336/336 - 114s - 341ms/step - accuracy: 0.6504 - loss: 0.9410 - val_accuracy: 0.6036 - val_loss: 1.0640 - learning_rate: 0.0010
+Epoch 9/50
+336/336 - 115s - 341ms/step - accuracy: 0.6582 - loss: 0.9137 - val_accuracy: 0.5762 - val_loss: 1.1452 - learning_rate: 0.0010
+Epoch 10/50
+336/336 - 114s - 340ms/step - accuracy: 0.6710 - loss: 0.8769 - val_accuracy: 0.6022 - val_loss: 1.0510 - learning_rate: 0.0010
+Epoch 11/50
+336/336 - 114s - 340ms/step - accuracy: 0.6828 - loss: 0.8522 - val_accuracy: 0.5804 - val_loss: 1.1278 - learning_rate: 0.0010
+Epoch 12/50
+336/336 - 114s - 341ms/step - accuracy: 0.6920 - loss: 0.8277 - val_accuracy: 0.6198 - val_loss: 1.0656 - learning_rate: 0.0010
+Epoch 13/50
+336/336 - 114s - 341ms/step - accuracy: 0.6997 - loss: 0.8083 - val_accuracy: 0.6229 - val_loss: 1.0474 - learning_rate: 0.0010
+Epoch 14/50
+336/336 - 114s - 339ms/step - accuracy: 0.7095 - loss: 0.7814 - val_accuracy: 0.6047 - val_loss: 1.1103 - learning_rate: 0.0010
+Epoch 15/50
+336/336 - 115s - 341ms/step - accuracy: 0.7178 - loss: 0.7542 - val_accuracy: 0.5999 - val_loss: 1.1552 - learning_rate: 0.0010
+Epoch 16/50
+336/336 - 114s - 340ms/step - accuracy: 0.7293 - loss: 0.7323 - val_accuracy: 0.6277 - val_loss: 1.0814 - learning_rate: 0.0010
+Epoch 17/50
+336/336 - 114s - 340ms/step - accuracy: 0.7541 - loss: 0.6598 - val_accuracy: 0.6352 - val_loss: 1.0432 - learning_rate: 5.0000e-04
+Epoch 18/50
+336/336 - 114s - 339ms/step - accuracy: 0.7667 - loss: 0.6277 - val_accuracy: 0.6472 - val_loss: 1.0604 - learning_rate: 5.0000e-04
+Epoch 19/50
+336/336 - 94s - 278ms/step - accuracy: 0.7762 - loss: 0.6066 - val_accuracy: 0.6342 - val_loss: 1.0839 - learning_rate: 5.0000e-04
+Epoch 20/50
+336/336 - 120s - 357ms/step - accuracy: 0.7815 - loss: 0.5923 - val_accuracy: 0.6472 - val_loss: 1.0273 - learning_rate: 5.0000e-04
+Epoch 21/50
+336/336 - 114s - 340ms/step - accuracy: 0.7901 - loss: 0.5711 - val_accuracy: 0.6393 - val_loss: 1.1192 - learning_rate: 5.0000e-04
+Epoch 22/50
+336/336 - 114s - 340ms/step - accuracy: 0.7950 - loss: 0.5524 - val_accuracy: 0.6449 - val_loss: 1.1136 - learning_rate: 5.0000e-04
+Epoch 23/50
+336/336 - 114s - 338ms/step - accuracy: 0.7997 - loss: 0.5399 - val_accuracy: 0.6537 - val_loss: 1.0904 - learning_rate: 5.0000e-04
+Epoch 24/50
+336/336 - 116s - 345ms/step - accuracy: 0.8149 - loss: 0.4938 - val_accuracy: 0.6616 - val_loss: 1.0738 - learning_rate: 2.5000e-04
+Epoch 25/50
+336/336 - 109s - 324ms/step - accuracy: 0.8222 - loss: 0.4792 - val_accuracy: 0.6616 - val_loss: 1.0846 - learning_rate: 2.5000e-04
+Epoch 26/50
+336/336 - 108s - 322ms/step - accuracy: 0.8285 - loss: 0.4656 - val_accuracy: 0.6644 - val_loss: 1.0894 - learning_rate: 2.5000e-04
+Epoch 27/50
+336/336 - 108s - 320ms/step - accuracy: 0.8384 - loss: 0.4416 - val_accuracy: 0.6674 - val_loss: 1.1132 - learning_rate: 1.2500e-04
+Epoch 28/50
+336/336 - 108s - 320ms/step - accuracy: 0.8423 - loss: 0.4313 - val_accuracy: 0.6630 - val_loss: 1.1284 - learning_rate: 1.2500e-04
+{"task": "task3f_v2_pretrain_finetune", "test_accuracy": 0.6455837280579548, "test_macro_f1": 0.6255649757911189, "best_epoch": 20}

@@ -1,0 +1,3 @@
+full_diffaugment: aux acc (last 50 steps) = 0.177
+no_cutout: aux acc (last 50 steps) = 0.208
+no_aug: aux acc (last 50 steps) = 0.330

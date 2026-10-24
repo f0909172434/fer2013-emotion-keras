@@ -1,0 +1,91 @@
+{
+  "v1": {
+    "label_agreement": {
+      "angry": 0.222,
+      "disgust": 0.0,
+      "fear": 0.08,
+      "happy": 0.511,
+      "neutral": 0.248,
+      "sad": 0.562,
+      "surprise": 0.483,
+      "_mean": 0.301
+    },
+    "pixel_diversity": {
+      "angry": 0.2906,
+      "disgust": 0.0745,
+      "fear": 0.2938,
+      "happy": 0.2852,
+      "neutral": 0.2832,
+      "sad": 0.2957,
+      "surprise": 0.2805,
+      "_mean": 0.2576
+    }
+  },
+  "v2": {
+    "label_agreement": {
+      "angry": 0.254,
+      "disgust": 0.266,
+      "fear": 0.112,
+      "happy": 0.435,
+      "neutral": 0.331,
+      "sad": 0.482,
+      "surprise": 0.466,
+      "_mean": 0.335
+    },
+    "pixel_diversity": {
+      "angry": 0.2764,
+      "disgust": 0.2713,
+      "fear": 0.2788,
+      "happy": 0.2751,
+      "neutral": 0.2706,
+      "sad": 0.293,
+      "surprise": 0.2674,
+      "_mean": 0.2761
+    }
+  },
+  "v3": {
+    "label_agreement": {
+      "angry": 0.197,
+      "disgust": 0.095,
+      "fear": 0.076,
+      "happy": 0.299,
+      "neutral": 0.147,
+      "sad": 0.459,
+      "surprise": 0.238,
+      "_mean": 0.216
+    },
+    "pixel_diversity": {
+      "angry": 0.2827,
+      "disgust": 0.2597,
+      "fear": 0.2851,
+      "happy": 0.2735,
+      "neutral": 0.2724,
+      "sad": 0.2738,
+      "surprise": 0.2719,
+      "_mean": 0.2742
+    }
+  },
+  "v5": {
+    "label_agreement": {
+      "angry": 0.318,
+      "disgust": 0.326,
+      "fear": 0.088,
+      "happy": 0.337,
+      "neutral": 0.256,
+      "sad": 0.927,
+      "surprise": 0.966,
+      "_mean": 0.46
+    },
+    "pixel_diversity": {
+      "angry": 0.2425,
+      "disgust": 0.2437,
+      "fear": 0.2583,
+      "happy": 0.2398,
+      "neutral": 0.2304,
+      "sad": 0.2388,
+      "surprise": 0.2448,
+      "_mean": 0.2426
+    }
+  },
+  "_note": "每類 1000 張未篩選生成圖；label_agreement = 任務1分類器判成指定情緒的比例；pixel_diversity = 隨機 300 張兩兩平均像素差（真實訓練圖約 0.27）。"
+}

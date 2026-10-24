@@ -1,0 +1,11 @@
+Epoch 1/200
+336/336 - 173s - 514ms/step - aux_fake_acc: 0.1626 - aux_real_acc: 0.1967 - d_fake_acc: 0.6075 - d_loss: 2.1728 - d_real_acc: 0.6096 - g_loss: 0.6980
+Epoch 2/200
+336/336 - 169s - 503ms/step - aux_fake_acc: 0.1570 - aux_real_acc: 0.1822 - d_fake_acc: 0.6652 - d_loss: 2.0049 - d_real_acc: 0.6308 - g_loss: 0.7277
+Epoch 3/200
+336/336 - 158s - 470ms/step - aux_fake_acc: 0.1657 - aux_real_acc: 0.1871 - d_fake_acc: 0.6445 - d_loss: 2.0691 - d_real_acc: 0.6114 - g_loss: 0.6995
+Epoch 4/200
+336/336 - 158s - 469ms/step - aux_fake_acc: 0.1965 - aux_real_acc: 0.1986 - d_fake_acc: 0.6344 - d_loss: 2.1125 - d_real_acc: 0.5981 - g_loss: 0.6363
+Epoch 5/200
+336/336 - 161s - 480ms/step - aux_fake_acc: 0.2382 - aux_real_acc: 0.2167 - d_fake_acc: 0.5476 - d_loss: 2.0238 - d_real_acc: 0.7133 - g_loss: 0.6380
+Epoch 6/200

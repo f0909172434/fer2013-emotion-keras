@@ -1,0 +1,114 @@
+{
+  "task": "task2_augment_seed1",
+  "notes": "影像增強離線過採樣，每類補到 6133 張；驗證/測試集不動。訓練種子 1。",
+  "train_counts": {
+    "angry": 6133,
+    "disgust": 6133,
+    "fear": 6133,
+    "happy": 6133,
+    "neutral": 6133,
+    "sad": 6133,
+    "surprise": 6133
+  },
+  "train_size": 42931,
+  "epochs_run": 24,
+  "best_epoch": 16,
+  "best_val_loss": 0.9818888306617737,
+  "best_val_accuracy": 0.638643741607666,
+  "test_accuracy": 0.649902479799387,
+  "test_macro_f1": 0.6298108758556482,
+  "test_per_class_recall": {
+    "angry": 0.5783,
+    "disgust": 0.5045,
+    "fear": 0.3984,
+    "happy": 0.8461,
+    "neutral": 0.631,
+    "sad": 0.575,
+    "surprise": 0.7834
+  },
+  "test_per_class_f1": {
+    "angry": 0.5759,
+    "disgust": 0.6154,
+    "fear": 0.4551,
+    "happy": 0.8478,
+    "neutral": 0.6136,
+    "sad": 0.5351,
+    "surprise": 0.7659
+  },
+  "confusion_matrix": [
+    [
+      554,
+      8,
+      84,
+      43,
+      93,
+      152,
+      24
+    ],
+    [
+      31,
+      56,
+      7,
+      2,
+      2,
+      10,
+      3
+    ],
+    [
+      120,
+      2,
+      408,
+      23,
+      104,
+      246,
+      121
+    ],
+    [
+      42,
+      1,
+      39,
+      1501,
+      96,
+      58,
+      37
+    ],
+    [
+      74,
+      0,
+      42,
+      93,
+      778,
+      233,
+      13
+    ],
+    [
+      125,
+      4,
+      105,
+      70,
+      206,
+      717,
+      20
+    ],
+    [
+      20,
+      0,
+      84,
+      35,
+      24,
+      17,
+      651
+    ]
+  ],
+  "train_seconds": 3662.3,
+  "config": {
+    "seed": 1,
+    "batch_size": 128,
+    "max_epochs": 50,
+    "lr": 0.001,
+    "early_stop_patience": 8,
+    "keras": "3.15.1",
+    "backend": "torch",
+    "torch": "2.14.1"
+  }
+}

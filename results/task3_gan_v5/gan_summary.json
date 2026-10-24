@@ -1,0 +1,30 @@
+{
+  "version": "v5",
+  "clean_aux": true,
+  "aux_weight": 1.0,
+  "time_limit_min": 90.0,
+  "balanced_sampling": true,
+  "train_images_per_epoch": 42931,
+  "epochs_run": 37,
+  "steps_run": 12432,
+  "train_seconds": 5501.1,
+  "latent_dim": 128,
+  "batch_size": 128,
+  "changes_vs_v2": [
+    "DiffAugment(brightness, contrast, translation 1/8, cutout 1/2) on real+fake for D and G steps",
+    "spectral normalization in D",
+    "hinge loss",
+    "projection discriminator",
+    "auxiliary classifier head (weight 1.0)",
+    "generator EMA (decay 0.999)",
+    "TTUR Adam: D 4e-4, G 1e-4, betas (0.0, 0.9)"
+  ],
+  "final": {
+    "aux_fake_acc": 0.9297444224357605,
+    "aux_real_acc": 0.3403352200984955,
+    "d_fake_acc": 0.5091000199317932,
+    "d_loss": 3.5012691020965576,
+    "d_real_acc": 0.6416165828704834,
+    "g_loss": 0.5858328938484192
+  }
+}

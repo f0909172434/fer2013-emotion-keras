@@ -1,0 +1,114 @@
+{
+  "task": "task3e_v5_mix_filter",
+  "notes": "[task3_generator_v5.keras] 真實訓練集 + cGAN 生成圖（缺額的 50%，篩選模型 task2_augment.keras，min_conf 0.5）+ 影像增強補其餘缺額，每類補到 6133 張；驗證/測試集只有真實影像。",
+  "train_counts": {
+    "angry": 6133,
+    "disgust": 6133,
+    "fear": 6133,
+    "happy": 6133,
+    "neutral": 6133,
+    "sad": 6133,
+    "surprise": 6133
+  },
+  "train_size": 42931,
+  "epochs_run": 27,
+  "best_epoch": 19,
+  "best_val_loss": 0.9904805421829224,
+  "best_val_accuracy": 0.6544356942176819,
+  "test_accuracy": 0.649902479799387,
+  "test_macro_f1": 0.6258710200014254,
+  "test_per_class_recall": {
+    "angry": 0.5313,
+    "disgust": 0.6757,
+    "fear": 0.333,
+    "happy": 0.8489,
+    "neutral": 0.665,
+    "sad": 0.6135,
+    "surprise": 0.781
+  },
+  "test_per_class_f1": {
+    "angry": 0.5584,
+    "disgust": 0.6048,
+    "fear": 0.4223,
+    "happy": 0.8473,
+    "neutral": 0.6122,
+    "sad": 0.549,
+    "surprise": 0.7871
+  },
+  "confusion_matrix": [
+    [
+      509,
+      25,
+      64,
+      51,
+      116,
+      175,
+      18
+    ],
+    [
+      19,
+      75,
+      2,
+      4,
+      3,
+      7,
+      1
+    ],
+    [
+      132,
+      10,
+      341,
+      34,
+      136,
+      282,
+      89
+    ],
+    [
+      28,
+      6,
+      28,
+      1506,
+      98,
+      76,
+      32
+    ],
+    [
+      66,
+      5,
+      31,
+      79,
+      820,
+      218,
+      14
+    ],
+    [
+      99,
+      14,
+      55,
+      58,
+      241,
+      765,
+      15
+    ],
+    [
+      12,
+      2,
+      70,
+      49,
+      32,
+      17,
+      649
+    ]
+  ],
+  "train_seconds": 2989.7,
+  "config": {
+    "seed": 42,
+    "batch_size": 128,
+    "max_epochs": 50,
+    "lr": 0.001,
+    "early_stop_patience": 8,
+    "keras": "3.15.1",
+    "backend": "torch",
+    "torch": "2.14.1"
+  }
+}

@@ -1,0 +1,114 @@
+{
+  "task": "task1_raw_seed1",
+  "notes": "原始影像，只縮放到 [0,1]；無增強、無平衡。訓練種子 1。",
+  "train_counts": {
+    "angry": 3396,
+    "disgust": 371,
+    "fear": 3482,
+    "happy": 6133,
+    "neutral": 4220,
+    "sad": 4106,
+    "surprise": 2695
+  },
+  "train_size": 24403,
+  "epochs_run": 26,
+  "best_epoch": 18,
+  "best_val_loss": 0.9807403087615967,
+  "best_val_accuracy": 0.6360892057418823,
+  "test_accuracy": 0.6421008637503482,
+  "test_macro_f1": 0.6005126656572427,
+  "test_per_class_recall": {
+    "angry": 0.5846,
+    "disgust": 0.4955,
+    "fear": 0.3057,
+    "happy": 0.8946,
+    "neutral": 0.6172,
+    "sad": 0.5277,
+    "surprise": 0.8123
+  },
+  "test_per_class_f1": {
+    "angry": 0.5594,
+    "disgust": 0.5046,
+    "fear": 0.3985,
+    "happy": 0.8368,
+    "neutral": 0.6064,
+    "sad": 0.5216,
+    "surprise": 0.7763
+  },
+  "confusion_matrix": [
+    [
+      560,
+      23,
+      64,
+      69,
+      83,
+      129,
+      30
+    ],
+    [
+      37,
+      55,
+      5,
+      2,
+      5,
+      4,
+      3
+    ],
+    [
+      142,
+      11,
+      313,
+      61,
+      117,
+      245,
+      135
+    ],
+    [
+      34,
+      0,
+      13,
+      1587,
+      71,
+      36,
+      33
+    ],
+    [
+      95,
+      4,
+      26,
+      139,
+      761,
+      193,
+      15
+    ],
+    [
+      157,
+      12,
+      77,
+      106,
+      220,
+      658,
+      17
+    ],
+    [
+      19,
+      2,
+      49,
+      55,
+      20,
+      11,
+      675
+    ]
+  ],
+  "train_seconds": 2068.6,
+  "config": {
+    "seed": 1,
+    "batch_size": 128,
+    "max_epochs": 50,
+    "lr": 0.001,
+    "early_stop_patience": 8,
+    "keras": "3.15.1",
+    "backend": "torch",
+    "torch": "2.14.1"
+  }
+}

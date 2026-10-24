@@ -1,0 +1,101 @@
+{
+  "target_per_class": 6133,
+  "before": {
+    "angry": 3396,
+    "disgust": 371,
+    "fear": 3482,
+    "happy": 6133,
+    "neutral": 4220,
+    "sad": 4106,
+    "surprise": 2695
+  },
+  "synthetic_added": {
+    "angry": 1368,
+    "disgust": 2881,
+    "fear": 983,
+    "happy": 0,
+    "neutral": 956,
+    "sad": 1014,
+    "surprise": 1719
+  },
+  "augmented_added": {
+    "angry": 1369,
+    "disgust": 2881,
+    "fear": 1668,
+    "happy": 0,
+    "neutral": 957,
+    "sad": 1013,
+    "surprise": 1719
+  },
+  "gan_fraction": 0.5,
+  "filter_model": "task2_augment.keras",
+  "min_conf": 0.5,
+  "gan_sampling": {
+    "angry": {
+      "generated": 5472,
+      "kept": 1368,
+      "pass_rate": 0.261
+    },
+    "disgust": {
+      "generated": 11524,
+      "kept": 2881,
+      "pass_rate": 0.4004
+    },
+    "fear": {
+      "generated": 31084,
+      "kept": 983,
+      "pass_rate": 0.0316
+    },
+    "neutral": {
+      "generated": 3824,
+      "kept": 956,
+      "pass_rate": 0.4498
+    },
+    "sad": {
+      "generated": 4056,
+      "kept": 1014,
+      "pass_rate": 0.3656
+    },
+    "surprise": {
+      "generated": 6876,
+      "kept": 1719,
+      "pass_rate": 0.6274
+    }
+  },
+  "after": {
+    "angry": 6133,
+    "disgust": 6133,
+    "fear": 6133,
+    "happy": 6133,
+    "neutral": 6133,
+    "sad": 6133,
+    "surprise": 6133
+  },
+  "baseline_agrees_with_gan_label": {
+    "angry": 0.5461,
+    "disgust": 0.5342,
+    "fear": 0.2533,
+    "neutral": 0.3253,
+    "sad": 0.9901,
+    "surprise": 0.9971,
+    "_note": "任務1分類器把該類生成圖判為同一類的比例（真實測試集上的對應數字見 task1 recall）"
+  },
+  "pixel_diversity_synthetic": {
+    "angry": 0.2237,
+    "disgust": 0.2363,
+    "fear": 0.2523,
+    "neutral": 0.2312,
+    "sad": 0.2091,
+    "surprise": 0.2313
+  },
+  "pixel_diversity_real_train": {
+    "angry": 0.2893,
+    "disgust": 0.2689,
+    "fear": 0.2795,
+    "happy": 0.273,
+    "neutral": 0.2743,
+    "sad": 0.2853,
+    "surprise": 0.2719
+  },
+  "generator": "task3_generator_v5.keras"
+}

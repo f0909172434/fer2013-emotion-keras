@@ -118,20 +118,23 @@ def build_cnn():
     return model
 
 
-def train_and_evaluate(task_name, x_train, y_train, x_val, y_val, x_test, y_test, notes=None):
+def train_and_evaluate(task_name, x_train, y_train, x_val, y_val, x_test, y_test, notes=None, seed=SEED,
+                       initial_weights=None):
     """用固定設定訓練 CNN，並把指標、混淆矩陣、學習曲線存到 results/<task_name>/。"""
     from sklearn.metrics import classification_report, confusion_matrix, f1_score
 
-    set_seed()
+    set_seed(seed)  # 只影響權重初始化、dropout 與打亂順序；資料切分固定
     out = RESULTS / task_name
     out.mkdir(parents=True, exist_ok=True)
     MODELS.mkdir(exist_ok=True)
 
     # 先打亂一次，讓增強/生成的影像不會集中在尾端；fit() 之後每個 epoch 也會再打亂
-    perm = np.random.default_rng(SEED).permutation(len(y_train))
+    perm = np.random.default_rng(seed).permutation(len(y_train))
     x_train, y_train = x_train[perm], y_train[perm]
 
     model = build_cnn()
+    if initial_weights is not None:  # 例如先用 GAN 圖預訓練過的權重；優化器與訓練設定仍完全相同
+        model.set_weights(initial_weights)
     callbacks = [
         keras.callbacks.EarlyStopping(monitor="val_loss", patience=EARLY_STOP_PATIENCE, restore_best_weights=True),
         keras.callbacks.ReduceLROnPlateau(monitor="val_loss", factor=0.5, patience=3, min_lr=1e-5),
@@ -168,7 +171,7 @@ def train_and_evaluate(task_name, x_train, y_train, x_val, y_val, x_test, y_test
         "confusion_matrix": cm.tolist(),
         "train_seconds": round(train_seconds, 1),
         "config": {
-            "seed": SEED, "batch_size": BATCH_SIZE, "max_epochs": MAX_EPOCHS, "lr": LEARNING_RATE,
+            "seed": seed, "batch_size": BATCH_SIZE, "max_epochs": MAX_EPOCHS, "lr": LEARNING_RATE,
             "early_stop_patience": EARLY_STOP_PATIENCE, "keras": keras.__version__,
             "backend": keras.backend.backend(), "torch": torch.__version__,
         },
