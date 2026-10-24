@@ -22,8 +22,11 @@ from keras import layers
 ROOT = Path(__file__).resolve().parent
 DATA_DIR = ROOT / "data" / "extracted"
 CACHE = ROOT / "data" / "fer2013_uint8.npz"
-RESULTS = ROOT / "results"
-MODELS = ROOT / "models"
+# 快速模式（FER_QUICK=1）：每個訓練只跑 1 個 epoch，用來幾分鐘內確認整條流程能跑通。
+# 輸出寫到 results_quick/、models_quick/，不會覆蓋倉庫裡的正式結果。
+QUICK = os.environ.get("FER_QUICK") == "1"
+RESULTS = ROOT / ("results_quick" if QUICK else "results")
+MODELS = ROOT / ("models_quick" if QUICK else "models")
 
 CLASSES = ["angry", "disgust", "fear", "happy", "neutral", "sad", "surprise"]
 SEED = 42
@@ -31,7 +34,7 @@ VAL_FRACTION = 0.15
 
 # 固定訓練設定（三個任務完全相同）
 BATCH_SIZE = 128
-MAX_EPOCHS = 50
+MAX_EPOCHS = 1 if QUICK else 50
 LEARNING_RATE = 1e-3
 EARLY_STOP_PATIENCE = 8
 

@@ -18,10 +18,10 @@ import torch
 import keras
 from keras import layers, ops
 
-from common import CLASSES, MODELS, RESULTS, SEED, load_data, set_seed
+from common import CLASSES, MODELS, QUICK, RESULTS, SEED, load_data, set_seed
 
 LATENT_DIM = 128
-GAN_EPOCHS = 100          # 上限
+GAN_EPOCHS = 1 if QUICK else 100  # 上限
 GAN_TIME_LIMIT_MIN = 70   # 牆鐘時間上限，兩者先到者停止
 N_CLASSES = len(CLASSES)
 

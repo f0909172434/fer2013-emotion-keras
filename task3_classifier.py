@@ -17,7 +17,7 @@ import numpy as np
 
 import keras
 
-from common import CLASSES, MODELS, RESULTS, SEED, class_counts, load_data, set_seed, to_model_input, train_and_evaluate
+from common import CLASSES, MODELS, QUICK, RESULTS, SEED, class_counts, load_data, set_seed, to_model_input, train_and_evaluate
 from task2_augment import augment, build_augmenter
 from task3_gan import generate
 
@@ -30,7 +30,7 @@ def diversity(x_uint8, n=300, seed=0):
     return round(float(np.abs(x[i] - x[j]).mean()), 4)
 
 
-def sample_gan(generator, label, n, filter_model=None, min_conf=0.5, max_rounds=10):
+def sample_gan(generator, label, n, filter_model=None, min_conf=0.5, max_rounds=1 if QUICK else 10):
     """產生 n 張指定情緒的 GAN 圖；有 filter_model 時只保留通過篩選的圖。回傳 (影像, 統計)。"""
     if filter_model is None:
         return generate(generator, label, n), {"generated": n, "kept": n}
@@ -55,7 +55,9 @@ def save_synthetic_examples(x_syn, y_syn, path, per_class=10):
     import matplotlib.pyplot as plt
 
     present = [c for c in range(len(CLASSES)) if (y_syn == c).any()]
-    fig, axes = plt.subplots(len(present), per_class, figsize=(per_class * 0.9, len(present) * 1.0))
+    if not present:  # 例如篩選太嚴、沒有任何 GAN 圖通過
+        return
+    fig, axes = plt.subplots(len(present), per_class, figsize=(per_class * 0.9, len(present) * 1.0), squeeze=False)
     for r, c in enumerate(present):
         idx = np.flatnonzero(y_syn == c)[:per_class]
         for k, i in enumerate(idx):
@@ -118,7 +120,7 @@ if __name__ == "__main__":
     # 生成品質檢查：任務 1 的分類器（只看過真實資料）認為生成圖是哪一類？
     fidelity = None
     baseline_path = MODELS / "task1_raw.keras"
-    if baseline_path.exists():
+    if baseline_path.exists() and len(x_syn) > 0:
         baseline = keras.saving.load_model(baseline_path)
         pred = baseline.predict(to_model_input(x_syn), batch_size=512, verbose=0).argmax(1)
         fidelity = {CLASSES[c]: round(float((pred[y_syn == c] == c).mean()), 4)

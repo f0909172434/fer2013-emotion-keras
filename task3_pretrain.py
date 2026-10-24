@@ -18,12 +18,12 @@ import numpy as np
 
 import keras
 
-from common import (BATCH_SIZE, CLASSES, MODELS, RESULTS, SEED, build_cnn, class_counts, load_data, set_seed,
+from common import (BATCH_SIZE, CLASSES, MODELS, QUICK, RESULTS, SEED, build_cnn, class_counts, load_data, set_seed,
                     to_model_input, train_and_evaluate)
 from task2_augment import balance_with_augmentation
 from task3_gan import generate
 
-PRETRAIN_MAX_EPOCHS = 20
+PRETRAIN_MAX_EPOCHS = 1 if QUICK else 20
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()

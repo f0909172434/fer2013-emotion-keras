@@ -18,3 +18,6 @@ kaggle.json
 .env
 # 交給老師的 PDF（含真人臉對照圖，不公開）
 submission/
+# 快速模式（FER_QUICK=1）的輸出
+results_quick/
+models_quick/

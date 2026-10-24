@@ -40,48 +40,101 @@
 
 ---
 
-## 1. 環境與重現方式
+## 1. 如何執行
+
+### 1.1 只想看結果
+
+不需要執行任何程式。所有實驗的結果都已經在 `results/` 裡：總表 `results/summary.md`、
+每個實驗的 `metrics.json`、學習曲線、混淆矩陣與 GAN 生成樣本圖。
+
+### 1.2 安裝環境
+
+需要 Python 3.12。有 NVIDIA GPU（CUDA）或 Apple Silicon（MPS）會快很多；只用 CPU 也能跑，但完整重現會非常久。
+本作業開發時使用：
 
 | 項目 | 版本 |
 |---|---|
 | 硬體 | Apple M5（Keras 透過 PyTorch 後端使用 Apple GPU / MPS） |
 | Python | 3.12 |
-| Keras | 3.15.1（後端 `torch` 2.14.1） |
+| Keras | 3.15.1（後端 `torch` 2.14.1；程式會自動設定 `KERAS_BACKEND=torch`） |
 | 其他 | numpy、scikit-learn、scipy、matplotlib、pillow，見 `requirements.txt` |
 
 ```bash
+git clone https://github.com/f0909172434/fer2013-emotion-keras.git
+cd fer2013-emotion-keras
+
+# 用 uv
 uv venv .venv --python 3.12
 uv pip install --python .venv/bin/python -r requirements.txt
 
-# 下載資料（需要 Kaggle API 帳號；資料不放在本倉庫）
-kaggle datasets download -d msambare/fer2013 -p data/raw
-unzip -q data/raw/fer2013.zip -d data/extracted
+# 或用一般的 venv + pip
+python3.12 -m venv .venv
+.venv/bin/pip install -r requirements.txt        # Windows：.venv\Scripts\pip install -r requirements.txt
+```
 
-export KERAS_BACKEND=torch
+### 1.3 下載資料集
 
-# 第一輪
-.venv/bin/python task1_baseline.py                 # 任務 1（加 --seed 1 即為換種子重跑）
+資料集不放在本倉庫，請從 Kaggle 下載，解壓縮成 `data/extracted/train/<情緒>/*.jpg` 與 `data/extracted/test/<情緒>/*.jpg`。
+
+- **方法 A：網頁下載**。到 <https://www.kaggle.com/datasets/msambare/fer2013> 按 Download，
+  把 zip 解壓縮到 `data/extracted/`。
+- **方法 B：Kaggle 指令**（需要 Kaggle 帳號的 API token，放在 `~/.kaggle/kaggle.json`）：
+
+  ```bash
+  pip install kaggle
+  kaggle datasets download -d msambare/fer2013 -p data/raw
+  unzip -q data/raw/fer2013.zip -d data/extracted
+  ```
+
+下載的 `fer2013.zip` SHA-256 為
+`9f3422c7a45b676c2965ef4fc5f3099932aa98fd13eaaa2c254f620a9894a6e9`，可用來確認拿到的是同一份資料。
+
+### 1.4 快速檢查：確認整條流程能跑通
+
+```bash
+FER_QUICK=1 bash run_all.sh
+```
+
+快速模式下每個訓練只跑 1 個 epoch，在 Apple M5 上全部約 30 分鐘。輸出寫到 `results_quick/` 與 `models_quick/`，
+**不會覆蓋** `results/` 裡的正式結果。因為只訓練 1 個 epoch，分數會很低，這個模式只用來確認程式能正常執行。
+
+### 1.5 完整重現
+
+```bash
+bash run_all.sh
+```
+
+`run_all.sh` 依序執行所有實驗，後面的步驟會用到前面訓練出的模型（例如 3c、3e 用任務 2 的模型篩選 GAN 圖），
+所以順序不能任意調換。在 Apple M5 上全部約 15 小時，大致時間如下：
+
+| 步驟 | 時間（Apple M5） |
+|---|---|
+| 任務 1、任務 2 的分類器 | 各約 40～55 分鐘 |
+| GAN v1、v2 | 各 70 分鐘（程式內設定的時間上限） |
+| GAN v3 / v5 | 150 / 90 分鐘（時間上限） |
+| 任務 3 的每個分類器（3a、3b、3c、3e、3f） | 各約 50～60 分鐘 |
+| 換種子重跑（任務 1、2、3e） | 共約 2.5 小時 |
+
+用 GPU 重跑時，因為浮點運算順序不同，數字可能和本報告有小幅差異；macro-F1 的差異應該在 2.3 節的種子波動範圍附近。
+
+沒有 bash 的環境（例如 Windows），可以照 `run_all.sh` 裡的順序逐行執行。快速模式在 PowerShell 用
+`$env:FER_QUICK="1"`、在 cmd 用 `set FER_QUICK=1` 設定。也可以單獨執行某一步：
+
+```bash
+.venv/bin/python task1_baseline.py                 # 任務 1（加 --seed 1 為換種子重跑）
 .venv/bin/python task2_augment.py                  # 任務 2（同樣可加 --seed 1）
-.venv/bin/python task3_gan.py                      # GAN v1（一般抽樣，70 分鐘）
-.venv/bin/python task3_gan.py --balanced           # GAN v2（各類別均衡抽樣，70 分鐘）
+.venv/bin/python task3_gan.py                      # GAN v1（一般抽樣）
+.venv/bin/python task3_gan.py --balanced           # GAN v2（各類別均衡抽樣）
 .venv/bin/python task3_classifier.py --generator task3_generator.keras    --task-name task3_gan_classifier_v1   # 3a
 .venv/bin/python task3_classifier.py --generator task3_generator_v2.keras --task-name task3_gan_classifier_v2   # 3b
-
-# 第二輪：改「用法」
 .venv/bin/python task3_classifier.py --generator task3_generator_v2.keras --task-name task3c_v2_mix_filter \
     --gan-fraction 0.5 --filter-model task2_augment.keras                                                     # 3c
 .venv/bin/python task3_pretrain.py                 # 3f：GAN v2 圖預訓練 + 任務 2 微調
-
-# 第二輪：改「品質」（生成器架構不變，只改訓練方式與判別器）
-.venv/bin/python task3_gan_v3.py                                                              # GAN v3（150 分鐘）
-.venv/bin/python task3_gan_v3.py --clean-aux --time-limit-min 90                              # GAN v4（第 5 epoch 未達門檻，停止）
+.venv/bin/python task3_gan_v3.py                                                              # GAN v3
+.venv/bin/python task3_gan_v3.py --clean-aux --time-limit-min 90                              # GAN v4（報告中第 5 epoch 未達門檻而停止）
 .venv/bin/python task3_gan_v3.py --clean-aux --aux-weight 1.0 --tag v5 --time-limit-min 90    # GAN v5
 .venv/bin/python task3_classifier.py --generator task3_generator_v5.keras --task-name task3e_v5_mix_filter \
-    --gan-fraction 0.5 --filter-model task2_augment.keras                                                     # 3e
-.venv/bin/python task3_classifier.py --generator task3_generator_v5.keras --task-name task3e_v5_mix_filter_seed1 \
-    --gan-fraction 0.5 --filter-model task2_augment.keras --seed 1                                            # 3e 換種子
-
-# GAN 品質檢查與彙整
+    --gan-fraction 0.5 --filter-model task2_augment.keras                                                     # 3e（加 --seed 1 為換種子）
 .venv/bin/python analyze_gan_fid.py --generators v1=task3_generator.keras v2=task3_generator_v2.keras \
     v3=task3_generator_v3.keras v5=task3_generator_v5.keras                                   # FER-FID
 .venv/bin/python analyze_gan_memorization.py --generators v1=task3_generator.keras v2=task3_generator_v2.keras \
@@ -91,8 +144,9 @@ export KERAS_BACKEND=torch
 .venv/bin/python make_summary.py                   # 產生比較表與比較圖
 ```
 
-下載的 `fer2013.zip` SHA-256 為
-`9f3422c7a45b676c2965ef4fc5f3099932aa98fd13eaaa2c254f620a9894a6e9`，可用來確認拿到的是同一份資料。
+GAN v4 不在 `run_all.sh` 裡，因為它在報告中依事先設定的門檻提早停止，後續實驗沒有用到它。
+
+### 1.6 檔案說明
 
 | 檔案 | 用途 |
 |---|---|
@@ -107,6 +161,7 @@ export KERAS_BACKEND=torch
 | `analyze_gan_memorization.py` | 檢查生成圖是否只是複製訓練圖 |
 | `analyze_gan_agreement.py` | 各版 GAN 的標籤一致率與多樣性（每版每類 1,000 張未篩選生成圖，任務 1 分類器判讀） |
 | `make_summary.py` | 彙整所有實驗，輸出 `results/summary.md` 與 `results/comparison_recall.png` |
+| `run_all.sh` | 依序執行所有實驗；`FER_QUICK=1` 為快速檢查模式 |
 | `results/` | 每個實驗的指標 JSON、學習曲線、混淆矩陣、GAN 樣本圖；`results/_failed/` 是失敗嘗試與診斷紀錄 |
 | `logs/` | 每次訓練的完整輸出 |
 

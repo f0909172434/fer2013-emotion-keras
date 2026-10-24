@@ -24,10 +24,10 @@ import torch.nn.functional as F
 import keras
 from keras import layers, ops
 
-from common import CLASSES, MODELS, RESULTS, SEED, load_data, set_seed
+from common import CLASSES, MODELS, QUICK, RESULTS, SEED, load_data, set_seed
 from task3_gan import LATENT_DIM, N_CLASSES, balanced_indices, build_generator, save_grid
 
-GAN_EPOCHS = 200
+GAN_EPOCHS = 1 if QUICK else 200
 GAN_TIME_LIMIT_MIN = 150
 AUX_WEIGHT = 0.2
 EMA_DECAY = 0.999
