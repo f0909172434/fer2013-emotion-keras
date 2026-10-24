@@ -16,3 +16,5 @@ __pycache__/
 # 憑證
 kaggle.json
 .env
+# 交給老師的 PDF（含真人臉對照圖，不公開）
+submission/
