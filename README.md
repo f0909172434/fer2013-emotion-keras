@@ -60,7 +60,7 @@
 | 其他 | numpy、scikit-learn、scipy、matplotlib、pillow，見 `requirements.txt` |
 
 ```bash
-git clone https://github.com/f0909172434/fer2013-emotion-keras.git
+git clone https://github.com/Chih-Kai-Wang/fer2013-emotion-keras.git
 cd fer2013-emotion-keras
 
 # 用 uv
